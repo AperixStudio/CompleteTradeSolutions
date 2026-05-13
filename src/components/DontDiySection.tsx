@@ -1,0 +1,76 @@
+import { AlertTriangle, DollarSign, ShieldCheck } from 'lucide-react'
+import RevealLine from './animations/RevealLine'
+
+const riskCards = [
+  {
+    icon: AlertTriangle,
+    heading: 'Hidden costs add up fast',
+    body: 'Incorrect waterproofing, unlevel surfaces, and botched tile work often costs more to fix than it would have cost to do right the first time.',
+  },
+  {
+    icon: ShieldCheck,
+    heading: 'Licensing protects you',
+    body: 'Plumbing and electrical work require licensed tradespeople by law. Unlicensed work can void your home insurance and complicate future sales.',
+  },
+  {
+    icon: DollarSign,
+    heading: 'Your time has value',
+    body: "Weekends spent tiling, re-tiling, and undoing mistakes aren't free. A coordinated team gets the result done cleanly and hands it back to you.",
+  },
+]
+
+export default function DontDiySection() {
+  return (
+    <section
+      id="dont-diy"
+      className="flex min-h-svh snap-start items-center bg-[#2a2a2a] py-24 text-white"
+    >
+      <div className="section-shell">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
+          <div>
+            <RevealLine
+              as="p"
+              className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)"
+            >
+              Don't DIY
+            </RevealLine>
+            <RevealLine
+              as="h2"
+              delay={0.08}
+              className="mt-3 text-4xl font-black leading-tight lg:text-5xl"
+            >
+              Some jobs look easy until they're not.
+            </RevealLine>
+            <RevealLine delay={0.16} className="mt-6 text-lg leading-8 text-white/75">
+              Kitchen and bathroom renovations involve plumbing, electrical,
+              waterproofing, and structural work — all of which carry real
+              consequences when they go wrong. A poorly tiled shower or an
+              unlicensed electrical connection isn't just ugly, it's a
+              liability.
+            </RevealLine>
+            <RevealLine delay={0.22} className="mt-4 text-lg leading-8 text-white/75">
+              Getting a professional in from the start is cheaper, faster, and
+              safer than fixing a DIY job halfway through.
+            </RevealLine>
+          </div>
+
+          <div className="grid content-center gap-4">
+            {riskCards.map((item, index) => (
+              <RevealLine key={item.heading} delay={0.12 + index * 0.1}>
+                <div className="flex gap-5 rounded-xl border border-white/15 bg-white/8 p-5">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-(--color-accent) text-white">
+                    <item.icon size={22} />
+                  </div>
+                  <div>
+                    <p className="font-black text-white">{item.heading}</p>
+                    <p className="mt-1 leading-7 text-white/70">{item.body}</p>
+                  </div>
+                </div>
+              </RevealLine>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

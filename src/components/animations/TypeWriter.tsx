@@ -4,6 +4,14 @@ type TypeWriterProps = {
   phrases: string[]
 }
 
+const pauseAfterTypingSeconds = .5
+const deleteSpeedSeconds = 0.034
+const typeSpeedSeconds = 0.05
+
+function secondsToMilliseconds(seconds: number) {
+  return seconds * 1000
+}
+
 export default function TypeWriter({ phrases }: TypeWriterProps) {
   const cleanPhrases = useMemo(
     () => phrases.filter((phrase) => phrase.trim().length > 0),
@@ -21,7 +29,13 @@ export default function TypeWriter({ phrases }: TypeWriterProps) {
     const phrase = cleanPhrases[phraseIndex]
     const atEnd = visibleCharacters === phrase.length
     const atStart = visibleCharacters === 0
-    const delay = atEnd ? 1500 : isDeleting ? 34 : 64
+    const delay = secondsToMilliseconds(
+      atEnd
+        ? pauseAfterTypingSeconds
+        : isDeleting
+          ? deleteSpeedSeconds
+          : typeSpeedSeconds,
+    )
 
     const timer = window.setTimeout(() => {
       if (atEnd && !isDeleting) {

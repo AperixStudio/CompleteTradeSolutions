@@ -3,14 +3,14 @@ export const siteConfig = {
   descriptor: 'Kitchen, bathroom, and trade renovation support',
   phone: '0421 601 954',
   phoneHref: 'tel:+61421601954',
-  email: 'Email address to add',
-  location: 'Location to confirm',
-  serviceArea: 'Service area to confirm',
+  email: 'info@completetrade.au',
+  location: 'Melbourne, VIC, Australia, Victoria',
+  serviceArea: 'Melbourne metro and surrounding areas',
   facebookUrl:
     'https://www.facebook.com/profile.php?id=61577631743905&mibextid=wwXIfr',
-  heroHeadline: ['Old kitchen out.', 'Dream kitchen in.', 'Trades coordinated.'],
+  heroHeadline: ['Renovation and Remodeling', 'Exterior Construction and Roof Restoration', 'Painting Services', 'Plumbing Services', 'Painting Services', 'Electrical Services', 'Cabinetry and Interior Fitouts', 'Flooring'],
   tagline:
-    'Kitchen and bathroom renovation framework built from the supplied Facebook page assets.',
+    'Building Beyond Expectations, We specialise in End to End Commercial and Residental Improvements.',
 }
 
 export const services = [
