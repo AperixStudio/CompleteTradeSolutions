@@ -50,7 +50,7 @@ export default function PillNav() {
           </a>
           <a
             href={siteConfig.phoneHref}
-            className="hidden h-10 items-center gap-2 rounded-full bg-[var(--color-accent)] px-4 text-sm font-black text-[var(--color-background)] transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white sm:inline-flex"
+            className="hidden h-10 items-center gap-2 rounded-full bg-[var(--color-accent)] px-4 text-sm font-black text-[var(--color-background)] shadow-[0_0_0_rgba(232,93,4,0)] transition duration-200 hover:-translate-y-1 hover:bg-[var(--color-accent)] hover:shadow-[0_12px_28px_rgba(232,93,4,0.45)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-surface)] sm:inline-flex"
           >
             <Phone size={16} />
             Call

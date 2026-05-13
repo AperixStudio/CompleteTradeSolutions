@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import IntroAnimation from './components/animations/IntroAnimation'
 import { siteConfig } from './lib/site'
@@ -107,7 +108,12 @@ function App() {
           <IntroAnimation key="intro" onComplete={handleIntroComplete} />
         )}
       </AnimatePresence>
-      {!introActive && <HomePage />}
+      {!introActive && (
+        <>
+          <HomePage />
+          <Footer />
+        </>
+      )}
     </>
   )
 }

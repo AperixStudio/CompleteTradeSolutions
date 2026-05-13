@@ -2,9 +2,9 @@
  * RevealImage — wipes an image upward into view using clip-path.
  * Matches the inset(100% 0px 0px) → inset(0% 0px 0px) effect on chkstepan.com.
  */
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, type HTMLMotionProps, useReducedMotion } from 'framer-motion'
 
-interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface Props extends HTMLMotionProps<'img'> {
   src: string
   alt: string
   delay?: number

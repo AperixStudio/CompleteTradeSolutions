@@ -8,6 +8,7 @@ export const colors = {
   background: '#f2f2f0',
   surface: '#1c1c1c',
   line: '#dcdcda',
+  yellow: '#FFDA03',
 }
 
 export const gradients = {
