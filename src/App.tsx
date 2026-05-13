@@ -1,8 +1,28 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import HomePage from './pages/HomePage'
+import IntroAnimation from './components/animations/IntroAnimation'
 import { siteConfig } from './lib/site'
 
+function shouldShowIntro(): boolean {
+  const navEntry = performance.getEntriesByType(
+    'navigation',
+  )[0] as PerformanceNavigationTiming | undefined
+  const navType = navEntry?.type
+  const hasSeenIntro = sessionStorage.getItem('introPlayed')
+
+  // Show on fresh open (flag not set) OR on hard refresh (F5)
+  return navType === 'reload' || !hasSeenIntro
+}
+
 function App() {
+  const [introActive, setIntroActive] = useState<boolean>(() => shouldShowIntro())
+
+  function handleIntroComplete() {
+    sessionStorage.setItem('introPlayed', 'true')
+    setIntroActive(false)
+  }
+
   useEffect(() => {
     const title = `${siteConfig.name} | Trade Services`
     const description =
@@ -80,7 +100,16 @@ function App() {
     schemaTag.textContent = JSON.stringify(schema)
   }, [])
 
-  return <HomePage />
+  return (
+    <>
+      <AnimatePresence>
+        {introActive && (
+          <IntroAnimation key="intro" onComplete={handleIntroComplete} />
+        )}
+      </AnimatePresence>
+      {!introActive && <HomePage />}
+    </>
+  )
 }
 
 export default App
