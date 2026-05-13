@@ -1,21 +1,21 @@
 export const colors = {
-  primary: '#122237', // main brand dark navy
-  primaryRgb: '18, 34, 55',
-  secondary: '#f4b63f', // gold/yellow accent from the logo
-  accent: '#f28c28', // Orange support color
-  ink: '#111827', // main text color
-  muted: '#5f6b7a', // softer paragraph text
-  background: '#121212', // overall page background
-  surface: '#414141', // white panels/cards
-  line: '#e4ded3', // borders/dividers
+  primary: '#111111',
+  primaryRgb: '17, 17, 17',
+  secondary: '#3a3a3a',
+  accent: '#e85d04',
+  ink: '#111111',
+  muted: '#5c5c5c',
+  background: '#f2f2f0',
+  surface: '#1c1c1c',
+  line: '#dcdcda',
 }
 
 export const gradients = {
   heroOverlay: `linear-gradient(
     135deg,
-    rgba(245, 245, 245, 0.96),
-    rgba(160, 160, 160, 0.72) 48%,
-    rgba(18, 18, 18, 0.92)
+    rgba(255, 255, 255, 0.12),
+    rgba(58, 58, 58, 0.2) 48%,
+    rgba(17, 17, 17, 0.72)
   )`,
 }
 

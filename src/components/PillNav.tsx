@@ -10,7 +10,7 @@ const navItems = [
 
 export default function PillNav() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[color:var(--color-surface)] shadow-lg shadow-slate-950/20">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-(--color-surface) shadow-lg shadow-black/30">
       <nav
         className="section-shell flex h-20 items-center justify-between"
         aria-label="Primary navigation"

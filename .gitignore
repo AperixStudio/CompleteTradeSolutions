@@ -29,3 +29,6 @@ dist-ssr
 # Raw Facebook export cache
 src/assets/heroVideo.html
 src/assets/heroVideo_files/
+
+# Keep original source video out of Git; use compressed copy instead
+src/assets/CTS.mp4

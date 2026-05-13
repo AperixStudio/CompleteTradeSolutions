@@ -78,7 +78,7 @@ export default function IntroAnimation({ onComplete }: Props) {
   useEffect(() => {
     const run = async () => {
       // ── 0. Blank hold ────────────────────────────────────────────────────
-      await new Promise<void>((r) => setTimeout(r, 800))
+      await new Promise<void>((r) => setTimeout(r, 500))
 
       // ── 1. Text layers fly in (staggered, parallel) ──────────────────────
       animate(
@@ -98,7 +98,7 @@ export default function IntroAnimation({ onComplete }: Props) {
       )
 
       // ── 2. Hold ─────────────────────────────────────────────────────────
-      await new Promise<void>((r) => setTimeout(r, 800))
+      //await new Promise<void>((r) => setTimeout(r, 100))
 
       // ── 3. House mark fades in ───────────────────────────────────────────
       await animate(
@@ -121,7 +121,7 @@ export default function IntroAnimation({ onComplete }: Props) {
       await animate('#full-logo-png', { opacity: [0, 1] }, { duration: 1.2, ease: 'easeInOut' })
 
       // ── 5. Hold — full logo visible ──────────────────────────────────────
-      await new Promise<void>((r) => setTimeout(r, 1000))
+      await new Promise<void>((r) => setTimeout(r, 800))
 
       // ── 6. Zoom punch-through ────────────────────────────────────────────
       await animate(
