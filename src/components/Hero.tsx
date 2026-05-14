@@ -13,24 +13,14 @@ export default function Hero() {
           muted
           loop
           playsInline
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: '177.78vh',
-            height: '56.25vw',
-            minWidth: '100%',
-            minHeight: '100%',
-            transform: 'translate(-50%, -50%)',
-            objectFit: 'cover',
-          }}
+          className="absolute inset-0 h-full w-full translate-y-2 object-contain object-top sm:translate-y-12 sm:object-cover sm:object-[50%_75%] lg:translate-y-12 lg:object-[50%_75%]"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
         {/* Dark overlay so text stays legible */}
         <div className="absolute inset-0 bg-black/55" />
       </div>
-      <div className="section-shell relative grid h-full items-center gap-10 py-14">
+      <div className="section-shell relative grid h-full items-start gap-10 pt-8 pb-14 sm:items-center sm:py-14">
         <div className="max-w-3xl">
           <h1 className="max-w-4xl text-5xl font-black leading-[0.95] text-white sm:text-6xl lg:text-7xl">
             {siteConfig.name}

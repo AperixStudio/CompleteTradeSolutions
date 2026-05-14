@@ -1,4 +1,5 @@
-import { ExternalLink, Mail, Menu, Phone } from 'lucide-react'
+import { Menu, Phone, X } from 'lucide-react'
+import { useState } from 'react'
 import logo from '../assets/logo.jpg'
 import { siteConfig } from '../lib/site'
 
@@ -8,7 +9,23 @@ const navItems = [
   { href: '#contact', label: 'Contact' },
 ]
 
+function FacebookIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg
+      aria-hidden="true"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M14.2 8.6V6.9c0-.8.5-1 1-1h1.9V2.6A25 25 0 0 0 14.4 2c-2.8 0-4.7 1.7-4.7 4.8v1.8H6.6v3.7h3.1V22h3.9v-9.7h3.1l.5-3.7h-3Z" />
+    </svg>
+  )
+}
+
 export default function PillNav() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-(--color-surface) shadow-lg shadow-black/30">
       <nav
@@ -46,7 +63,7 @@ export default function PillNav() {
             className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[var(--color-secondary)] hover:text-[var(--color-background)] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
             aria-label="Open Facebook page"
           >
-            <ExternalLink size={18} />
+            <FacebookIcon />
           </a>
           <a
             href={siteConfig.phoneHref}
@@ -56,21 +73,67 @@ export default function PillNav() {
             Call
           </a>
           <a
-            href="#contact"
-            className="grid h-10 w-10 place-items-center rounded-full bg-[var(--color-secondary)] text-[var(--color-background)] transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white sm:hidden"
-            aria-label="Contact Complete Trade Solutions"
+            href={siteConfig.phoneHref}
+            className="grid h-10 w-10 place-items-center rounded-full bg-[var(--color-accent)] text-[var(--color-background)] transition hover:-translate-y-0.5 hover:bg-[var(--color-accent)] hover:shadow-[0_8px_20px_rgba(232,93,4,0.4)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] sm:hidden"
+            aria-label={`Call ${siteConfig.name}`}
           >
-            <Mail size={18} />
+            <Phone size={18} />
           </a>
           <button
             type="button"
+            onClick={() => setMobileMenuOpen((isOpen) => !isOpen)}
             className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white md:hidden"
-            aria-label="Navigation menu"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            <Menu size={18} />
+            {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </nav>
+
+      {mobileMenuOpen && (
+        <div
+          id="mobile-navigation"
+          className="section-shell pb-5 md:hidden"
+        >
+          <div className="rounded-2xl border border-white/10 bg-black/20 p-3 shadow-xl shadow-black/25">
+            <div className="grid gap-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 text-sm font-bold text-white/80 transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-3 grid gap-2 border-t border-white/10 pt-3">
+              <a
+                href={siteConfig.phoneHref}
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-4 py-3 text-sm font-black text-[var(--color-background)]"
+              >
+                <Phone size={16} />
+                Call {siteConfig.phone}
+              </a>
+              <a
+                href={siteConfig.facebookUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-4 py-3 text-sm font-bold text-white transition hover:bg-white/15"
+              >
+                <FacebookIcon size={16} />
+                Facebook page
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

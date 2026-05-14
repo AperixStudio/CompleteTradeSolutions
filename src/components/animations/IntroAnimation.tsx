@@ -84,17 +84,17 @@ export default function IntroAnimation({ onComplete }: Props) {
       animate(
         '#layer-complete',
         { x: ['-110vw', '0vw'], opacity: [0, 1] },
-        { duration: 1.8, ease: [0.22, 1, 0.36, 1] },
+        { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
       )
       animate(
         '#layer-trade',
         { x: ['110vw', '0vw'], opacity: [0, 1] },
-        { duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.45 },
+        { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 },
       )
       await animate(
         '#layer-solutions',
         { y: ['60vh', '0vh'], opacity: [0, 1] },
-        { duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.9 },
+        { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 },
       )
 
       // ── 2. Hold ─────────────────────────────────────────────────────────
@@ -104,24 +104,24 @@ export default function IntroAnimation({ onComplete }: Props) {
       await animate(
         '#layer-orangehouse',
         { opacity: [0, 1] },
-        { duration: 1.2, ease: 'easeOut' },
+        { duration: 0.5, ease: 'easeOut' },
       )
 
       // ── 4. Ring draws on ─────────────────────────────────────────────────
       // Fade the stroke opacity in over the first 0.6s so the leading edge eases in
-      animate('#ring-draw', { strokeOpacity: [0, 1] }, { duration: 0.9, ease: 'easeIn' })
+      animate('#ring-draw', { strokeOpacity: [0, 1] }, { duration: 0.5, ease: 'easeIn' })
       await animate(
         '#ring-draw',
         { strokeDashoffset: [RING_CIRCUMFERENCE, 0] },
-        { duration: 1.8, ease: 'easeInOut' },
+        { duration: 0.9, ease: 'easeInOut' },
       )
 
       // ── 4b. Cross-fade: real PNG fades in, SVG ring fades out ─────────────
-      animate('#svg-ring-layer', { opacity: [1, 0] }, { duration: 1.2, ease: 'easeInOut' })
-      await animate('#full-logo-png', { opacity: [0, 1] }, { duration: 1.2, ease: 'easeInOut' })
+      animate('#svg-ring-layer', { opacity: [1, 0] }, { duration: 0.8, ease: 'easeInOut' })
+      await animate('#full-logo-png', { opacity: [0, 1] }, { duration: 0.8, ease: 'easeInOut' })
 
       // ── 5. Hold — full logo visible ──────────────────────────────────────
-      await new Promise<void>((r) => setTimeout(r, 800))
+      await new Promise<void>((r) => setTimeout(r, 500))
 
       // ── 6. Zoom punch-through ────────────────────────────────────────────
       await animate(
