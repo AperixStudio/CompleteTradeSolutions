@@ -1,11 +1,14 @@
 import { ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
-import bathroomCreative from '../assets/bathroom-renovation.jpg'
-import kitchenCreative from '../assets/kitchen-renovation.jpg'
-import logo from '../assets/logo.jpg'
-import { serviceTags } from '../lib/site'
+// import bathroomCreative from '../assets/bathroom-renovation.jpg'
+// import kitchenCreative from '../assets/kitchen-renovation.jpg'
+import baHoriz from '../assets/BAHoriz.webp'
+import baVert from '../assets/BAVert.webp'
+// import logo from '../assets/logo.jpg'
+import { serviceTickerItems } from '../lib/site'
 import RevealImage from './animations/RevealImage'
 import RevealLine from './animations/RevealLine'
+import ServiceTicker from './ServiceTicker'
 
 type ShowcaseCard = {
   number: string
@@ -22,57 +25,57 @@ type ShowcaseCard = {
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 const showcaseCards: ShowcaseCard[] = [
-  {
-    number: '01',
-    title: 'Kitchen Renovations',
-    eyebrow: 'Planned, practical, and built to last.',
-    label: '( where function meets finish )',
-    href: '#work',
-    cta: 'See kitchen work',
-    image: kitchenCreative,
-    alt: 'Complete Trade Solutions kitchen renovation',
-    lines: [
-      'Kitchen projects are shaped around layout, storage, and clean finishes',
-      'that suit the way the home is actually used day to day.',
-      'From demolition and joinery coordination to fixtures and handover,',
-      'the focus stays on a renovation flow that feels clear, efficient,',
-      'and well managed from the first quote through the final install.',
-    ],
-  },
-  {
-    number: '02',
-    title: 'Bathroom Renovations',
-    eyebrow: 'Waterproofed properly. Finished cleanly.',
-    label: '( details matter in wet areas )',
-    href: '#contact',
-    cta: 'Ask about bathrooms',
-    image: bathroomCreative,
-    alt: 'Complete Trade Solutions bathroom renovation',
-    lines: [
-      'Bathrooms are approached with a balance of durability, comfort, and',
-      'practical detailing across tiling, fittings, lighting, and layout.',
-      'Each stage is coordinated to reduce friction between trades, helping',
-      'the finished room feel refined, hard wearing, and consistent in use,',
-      'without losing sight of budget, timelines, or everyday function.',
-    ],
-  },
-  {
-    number: '03',
-    title: 'Coordinated Trades',
-    eyebrow: 'One clear process across the whole job.',
-    label: '( less chasing, more progress )',
-    href: '#contact',
-    cta: 'Start a project',
-    image: logo,
-    alt: 'Complete Trade Solutions brand mark',
-    lines: [
-      'Projects run better when communication is simple, sequencing is clear,',
-      'and each trade knows where the job is heading before work begins.',
-      'Complete Trade Solutions brings that structure into the build,',
-      'supporting smoother scheduling, clearer decisions, and a process',
-      'that keeps momentum without unnecessary noise or confusion.',
-    ],
-  },
+  // {
+  //   number: '01',
+  //   title: 'Kitchen Renovations',
+  //   eyebrow: 'Planned, practical, and built to last.',
+  //   label: '( where function meets finish )',
+  //   href: '#work',
+  //   cta: 'See kitchen work',
+  //   image: kitchenCreative,
+  //   alt: 'Complete Trade Solutions kitchen renovation',
+  //   lines: [
+  //     'Kitchen projects are shaped around layout, storage, and clean finishes',
+  //     'that suit the way the home is actually used day to day.',
+  //     'From demolition and joinery coordination to fixtures and handover,',
+  //     'the focus stays on a renovation flow that feels clear, efficient,',
+  //     'and well managed from the first quote through the final install.',
+  //   ],
+  // },
+  // {
+  //   number: '02',
+  //   title: 'Bathroom Renovations',
+  //   eyebrow: 'Waterproofed properly. Finished cleanly.',
+  //   label: '( details matter in wet areas )',
+  //   href: '#contact',
+  //   cta: 'Ask about bathrooms',
+  //   image: bathroomCreative,
+  //   alt: 'Complete Trade Solutions bathroom renovation',
+  //   lines: [
+  //     'Bathrooms are approached with a balance of durability, comfort, and',
+  //     'practical detailing across tiling, fittings, lighting, and layout.',
+  //     'Each stage is coordinated to reduce friction between trades, helping',
+  //     'the finished room feel refined, hard wearing, and consistent in use,',
+  //     'without losing sight of budget, timelines, or everyday function.',
+  //   ],
+  // },
+  // {
+  //   number: '03',
+  //   title: 'Coordinated Trades',
+  //   eyebrow: 'One clear process across the whole job.',
+  //   label: '( less chasing, more progress )',
+  //   href: '#contact',
+  //   cta: 'Start a project',
+  //   image: logo,
+  //   alt: 'Complete Trade Solutions brand mark',
+  //   lines: [
+  //     'Projects run better when communication is simple, sequencing is clear,',
+  //     'and each trade knows where the job is heading before work begins.',
+  //     'Complete Trade Solutions brings that structure into the build,',
+  //     'supporting smoother scheduling, clearer decisions, and a process',
+  //     'that keeps momentum without unnecessary noise or confusion.',
+  //   ],
+  // },
 ]
 
 function ServiceShowcaseCard({
@@ -188,35 +191,52 @@ export default function ServicesOverview() {
   return (
     <>
       <section id="services" className="section-shell flex min-h-svh snap-start flex-col justify-center py-20">
-        <div className="max-w-4xl">
-          <RevealLine
-            as="p"
-            innerAs="span"
-            className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)"
-          >
-            Services
-          </RevealLine>
-          <RevealLine
-            as="h2"
-            innerAs="span"
-            delay={0.06}
-            className="mt-3 text-4xl font-black leading-[0.95] text-black sm:text-5xl lg:text-6xl"
-          >
-            What you get when clarity meets craftsmanship.
-          </RevealLine>
-          <div className="mt-8 max-w-3xl space-y-1 text-lg leading-8 text-(--color-muted)">
-            <RevealLine as="div" innerAs="span" delay={0.12}>
-              Kitchen, bathroom, and coordinated trade work framed with the same
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
+          <div className="max-w-4xl">
+            <RevealLine
+              as="p"
+              innerAs="span"
+              className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)"
+            >
+              Services
             </RevealLine>
-            <RevealLine as="div" innerAs="span" delay={0.18}>
-              masked line reveals, separator motion, and image wipes used in the
+            <RevealLine
+              as="h2"
+              innerAs="span"
+              delay={0.06}
+              className="mt-1 text-4xl font-black leading-[0.95] text-black sm:text-5xl lg:text-6xl"
+            >
+              Trade solutions for every stage of the job.
             </RevealLine>
-            <RevealLine as="div" innerAs="span" delay={0.24}>
-              chkstepan service overview section you pointed out.
-            </RevealLine>
+            <div className="mt-8 max-w-3xl space-y-1 text-lg leading-8 text-(--color-muted)">
+              <RevealLine as="div" innerAs="span" delay={0.12}>
+                From renovations and fitouts to plumbing, electrical, painting,
+              </RevealLine>
+              <RevealLine as="div" innerAs="span" delay={0.18}>
+                roofing, and flooring, we help keep the work clear and moving.
+              </RevealLine>
+              <RevealLine as="div" innerAs="span" delay={0.24}>
+                Use the ticker below for a quick look at what we cover.
+              </RevealLine>
+            </div>
+          </div>
+
+          <div>
+            <RevealImage
+              src={baVert}
+              alt="Complete Trade Solutions services"
+              delay={0.14}
+              className="aspect-[3/4] w-full object-contain sm:hidden"
+            />
+            <RevealImage
+              src={baHoriz}
+              alt="Complete Trade Solutions services"
+              delay={0.14}
+              className="hidden aspect-[4/3] w-full object-contain sm:block"
+            />
           </div>
         </div>
-
+        {/*}
         <div className="mt-10 flex flex-wrap gap-2">
           {serviceTags.map((tag, index) => (
             <RevealLine
@@ -231,6 +251,10 @@ export default function ServicesOverview() {
               </span>
             </RevealLine>
           ))}
+        </div>*/}
+
+        <div className="mt-12">
+          <ServiceTicker items={serviceTickerItems} />
         </div>
       </section>
 

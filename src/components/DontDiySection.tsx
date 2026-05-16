@@ -26,21 +26,39 @@ export default function DontDiySection() {
       className="flex min-h-svh snap-start items-center bg-[#2a2a2a] py-24 text-white"
     >
       <div className="section-shell">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
-          <div>
-            <RevealLine
-              as="p"
-              className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)"
-            >
-              Don't DIY
-            </RevealLine>
-            <RevealLine
-              as="h2"
-              delay={0.08}
-              className="mt-3 text-4xl font-black leading-tight lg:text-5xl"
-            >
-              Some jobs look easy until they're not.
-            </RevealLine>
+        <div className="max-w-4xl">
+          <RevealLine
+            as="p"
+            className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)"
+          >
+            Don't DIY
+          </RevealLine>
+          <RevealLine
+            as="h2"
+            delay={0.08}
+            className="mt-3 text-4xl font-black leading-tight lg:text-5xl"
+          >
+            Some jobs look easy until they're not.
+          </RevealLine>
+        </div>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+          <div className="mx-auto w-full max-w-[min(320px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl shadow-black/30 lg:mx-0 lg:max-w-[320px]">
+            <iframe
+              title="Complete Trade Solutions Facebook reel"
+              src="https://www.facebook.com/plugins/video.php?height=571&href=https%3A%2F%2Fwww.facebook.com%2F61577631743905%2Fvideos%2F1255679929613214%2F&show_text=false&width=320&t=0"
+              width="320"
+              height="571"
+              className="aspect-[320/571] w-full"
+              style={{ border: 'none', overflow: 'hidden' }}
+              scrolling="no"
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            />
+          </div>
+
+          {/* <div>
             <RevealLine delay={0.16} className="mt-6 text-lg leading-8 text-white/75">
               Kitchen and bathroom renovations involve plumbing, electrical,
               waterproofing, and structural work — all of which carry real
@@ -52,12 +70,12 @@ export default function DontDiySection() {
               Getting a professional in from the start is cheaper, faster, and
               safer than fixing a DIY job halfway through.
             </RevealLine>
-          </div>
+          </div> */}
 
-          <div className="grid content-center gap-4">
+          <div className="grid gap-4 lg:h-[571px] lg:grid-rows-3">
             {riskCards.map((item, index) => (
               <RevealLine key={item.heading} delay={0.12 + index * 0.1}>
-                <div className="flex gap-5 rounded-xl border border-white/15 bg-white/8 p-5">
+                <div className="flex h-full gap-5 rounded-xl border border-white/15 bg-white/8 p-5">
                   <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-(--color-accent) text-white">
                     <item.icon size={22} />
                   </div>

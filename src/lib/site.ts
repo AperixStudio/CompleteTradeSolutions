@@ -8,10 +8,20 @@ export const siteConfig = {
   serviceArea: 'Melbourne metro and surrounding areas',
   facebookUrl:
     'https://www.facebook.com/profile.php?id=61577631743905&mibextid=wwXIfr',
-  heroHeadline: ['Renovation and Remodeling', 'Exterior Construction and Roof Restoration', 'Painting Services', 'Plumbing Services', 'Painting Services', 'Electrical Services', 'Cabinetry and Interior Fitouts', 'Flooring'],
+  heroHeadline: [
+    'Renovation and Remodeling',
+    'Exterior Construction and Roof Restoration',
+    'Painting Services',
+    'Plumbing Services',
+    'Electrical Services',
+    'Cabinetry and Interior Fitouts',
+    'Flooring',
+  ],
   tagline:
     'Building Beyond Expectations, We specialise in End to End Commercial and Residental Improvements.',
 }
+
+export const serviceTickerItems = siteConfig.heroHeadline
 
 export const services = [
   {
