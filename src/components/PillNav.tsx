@@ -38,7 +38,7 @@ export default function PillNav() {
             alt={`${siteConfig.name} logo`}
             className="h-20 w-20 rounded-full object-cover"
           />
-          <span className="truncate text-sm font-black uppercase tracking-[0.16em] text-white sm:text-base">
+          <span className="hidden truncate text-sm font-black uppercase tracking-[0.16em] text-white sm:block sm:text-base">
             {siteConfig.name}
           </span>
         </a>

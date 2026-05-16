@@ -222,16 +222,14 @@ export default function ServicesOverview() {
           </div>
 
           <div>
-            <RevealImage
+            <img
               src={baVert}
               alt="Complete Trade Solutions services"
-              delay={0.14}
               className="aspect-[3/4] w-full object-contain sm:hidden"
             />
-            <RevealImage
+            <img
               src={baHoriz}
               alt="Complete Trade Solutions services"
-              delay={0.14}
               className="hidden aspect-[4/3] w-full object-contain sm:block"
             />
           </div>

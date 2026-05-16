@@ -1,6 +1,6 @@
 import { ArrowRight, Phone } from 'lucide-react'
 import heroVideo from '../assets/CTSHero.webm'
-import heroVideoMobile from '../assets/CTSHeroVert2.webm'
+import heroVideoMobile from '../assets/CTSHeroVertV2.webm'
 import { siteConfig } from '../lib/site'
 import TypeWriter from './animations/TypeWriter'
 
@@ -29,16 +29,17 @@ export default function Hero() {
         </video>
         {/* Dark overlay so text stays legible */}
         <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-black/45 via-black/20 to-transparent sm:hidden" />
       </div>
-      <div className="section-shell relative grid h-full items-start gap-10 pt-64  pb-14 sm:items-center sm:py-14">
+      <div className="section-shell relative grid h-full items-start gap-10 pt-44 pb-14 sm:items-center sm:py-14">
         <div className="max-w-3xl">
-          <h1 className="max-w-4xl text-5xl font-black leading-[0.95] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-black leading-[0.95] text-white sm:text-6xl lg:text-7xl">
             {siteConfig.name}
           </h1>
-          <p className="mt-1 min-h-16 max-w-3xl text-3xl font-black leading-tight text-white sm:text-4xl">
+          <p className="mt-1 min-h-14 max-w-3xl text-2xl font-black leading-tight text-white sm:min-h-16 sm:text-4xl">
             <TypeWriter phrases={siteConfig.heroHeadline} />
           </p>
-          <p className="mt-1 max-w-2xl text-lg leading-8 text-white/80">
+          <p className="mt-1 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
             {siteConfig.tagline}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
