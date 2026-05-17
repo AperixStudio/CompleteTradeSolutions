@@ -6,7 +6,7 @@ export default function Footer() {
   const prefersReduced = useReducedMotion()
 
   return (
-    <footer className="snap-start border-t border-(--color-line) bg-(--color-primary) py-10">
+    <footer className="border-t border-(--color-line) bg-(--color-primary) py-10">
       <div className="section-shell flex flex-col gap-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>

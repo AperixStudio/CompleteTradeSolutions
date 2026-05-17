@@ -23,7 +23,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="flex min-h-svh snap-start items-center bg-(--color-background) py-24"
+      className="flex min-h-svh items-center bg-(--color-background) py-24"
     >
       <div className="section-shell grid gap-12 lg:grid-cols-2 lg:gap-20">
         <div>

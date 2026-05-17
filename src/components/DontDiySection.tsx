@@ -23,7 +23,7 @@ export default function DontDiySection() {
   return (
     <section
       id="dont-diy"
-      className="flex min-h-svh snap-start items-center bg-[#2a2a2a] py-24 text-white"
+      className="flex min-h-svh items-center bg-[#2a2a2a] py-24 text-white"
     >
       <div className="section-shell">
         <div className="max-w-4xl">
