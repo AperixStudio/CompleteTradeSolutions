@@ -4,6 +4,7 @@ import DontDiySection from '../components/DontDiySection'
 import Hero from '../components/Hero'
 import PillNav from '../components/PillNav'
 import ServicesOverview from '../components/ServicesOverview.tsx'
+import OurWork from '../components/OurWork'
 
 export default function HomePage() {
   return (
@@ -21,6 +22,9 @@ export default function HomePage() {
 
       {/* ── Services ─────────────────────────────────────────────────────── */}
       <ServicesOverview />
+
+      {/* ── Our Work ─────────────────────────────────────────────────────── */}
+      <OurWork />
 
       {/* ── Contact ──────────────────────────────────────────────────────── */}
       <ContactUs />
