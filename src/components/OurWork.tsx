@@ -131,7 +131,7 @@ export default function OurWork() {
 
       {/* Carousel strip — bleeds edge to edge */}
       <div
-        className="relative w-full cursor-grab overflow-hidden active:cursor-grabbing"
+        className="relative w-full cursor-grab overflow-hidden active:cursor-grabbing touch-pan-y"
         style={{
           maskImage: 'linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)',
         }}
