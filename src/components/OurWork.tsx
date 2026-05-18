@@ -1,5 +1,5 @@
 import { AnimatePresence, LayoutGroup, motion, useAnimationFrame, useMotionValue } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Fence, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import RevealLine from './animations/RevealLine'
 
