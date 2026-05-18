@@ -10,7 +10,7 @@ const aboutCards = [
   {
     icon: HardHat,
     heading: 'End-to-end coordination',
-    body: 'We manage every stage of the build — scheduling, sequencing, and communication — so nothing falls through the cracks.',
+    body: 'We manage every stage of the build: scheduling, sequencing, and communication, so nothing falls through the cracks.',
   },
   {
     icon: Clock,
@@ -44,7 +44,7 @@ export default function AboutSection() {
             delay={0.16}
             className="mt-6 text-lg leading-8 text-(--color-muted)"
           >
-            Complete Trade Solutions was built on a simple idea — renovations
+            Complete Trade Solutions was built on a simple idea: renovations
             should be straightforward. No chasing trades, no crossed wires, no
             blowouts. Just a clear process from the first call to the final
             handover.

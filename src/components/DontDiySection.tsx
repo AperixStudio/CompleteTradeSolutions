@@ -61,7 +61,7 @@ export default function DontDiySection() {
           {/* <div>
             <RevealLine delay={0.16} className="mt-6 text-lg leading-8 text-white/75">
               Kitchen and bathroom renovations involve plumbing, electrical,
-              waterproofing, and structural work — all of which carry real
+              waterproofing, and structural work, all of which carry real
               consequences when they go wrong. A poorly tiled shower or an
               unlicensed electrical connection isn't just ugly, it's a
               liability.

@@ -47,7 +47,7 @@ export default function ContactUs() {
               delay={0.08}
               className="mt-3 text-4xl font-black leading-tight text-white lg:text-5xl"
             >
-              Get a quote — no obligation.
+              Get a quote, no obligation.
             </RevealLine>
             <RevealLine
               delay={0.16}
