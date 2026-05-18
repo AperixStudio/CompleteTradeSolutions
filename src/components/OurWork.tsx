@@ -21,7 +21,9 @@ import FenceAfter from '../assets/CarouselPhotos/FenceAfter.jpeg'
 
 
 // Import each photo at the top, then set src: photoVariable below.
-const photos: { src: string }[] = [
+const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61577631743905&mibextid=wwXIfr' // ← update if needed
+
+const photos: { src: string; href?: string; isFacebook?: boolean }[] = [
   { src: windowBnA },
   { src: LandscapeDirt},
   { src: LandscapeGrass },
@@ -34,6 +36,7 @@ const photos: { src: string }[] = [
   { src: OldPlaceBefore },
   { src: FenceBefore },
   { src: FenceAfter },
+  { src: '', href: FACEBOOK_URL, isFacebook: true },
 ]
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -166,23 +169,38 @@ export default function OurWork() {
             return (
               <motion.button
                 key={i}
-                layoutId={loopId}
-                onClick={() => { if (!isDragging.current) open(loopId, realIndex) }}
+                layoutId={p.isFacebook ? undefined : loopId}
+                onClick={() => {
+                  if (isDragging.current) return
+                  if (p.isFacebook && p.href) { window.open(p.href, '_blank', 'noopener,noreferrer'); return }
+                  open(loopId, realIndex)
+                }}
                 onDragStart={(e) => e.preventDefault()}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 transition={SPRING}
                 style={{ width: CARD_W, flexShrink: 0 }}
-                className="group relative aspect-4/3 overflow-hidden rounded-2xl bg-(--color-line) focus:outline-none focus:ring-2 focus:ring-(--color-accent)"
+                className="group relative aspect-4/3 overflow-hidden rounded-2xl focus:outline-none focus:ring-2 focus:ring-(--color-accent)"
               >
-                {p.src ? (
+                {p.isFacebook ? (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#1877F2] text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-14 w-14">
+                      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                    </svg>
+                    <p className="px-6 text-center text-base font-bold leading-snug">
+                      Check out more of our work on Facebook
+                    </p>
+                  </div>
+                ) : p.src ? (
                   <img src={p.src} alt={`Project ${realIndex + 1}`} draggable={false} className="absolute inset-0 h-full w-full object-cover select-none" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-[#dcdcda] to-[#c4c4c2]">
                     <span className="text-4xl font-black text-(--color-muted)/30">{realIndex + 1}</span>
                   </div>
                 )}
-                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-black/60 p-3 transition-transform duration-200 group-hover:translate-y-0" />
+                {!p.isFacebook && (
+                  <div className="absolute inset-x-0 bottom-0 translate-y-full bg-black/60 p-3 transition-transform duration-200 group-hover:translate-y-0" />
+                )}
               </motion.button>
             )
           })}
