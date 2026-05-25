@@ -23,7 +23,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          className="absolute inset-0 hidden h-full w-full translate-y-12 object-cover object-[50%_75%] sm:block"
+          className="absolute inset-0 hidden h-full w-full translate-y-16 object-cover object-[50%_75%] sm:block"
         >
           <source src={heroVideo} type="video/webm" />
         </video>
