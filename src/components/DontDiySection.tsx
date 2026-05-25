@@ -58,20 +58,6 @@ export default function DontDiySection() {
             />
           </div>
 
-          {/* <div>
-            <RevealLine delay={0.16} className="mt-6 text-lg leading-8 text-white/75">
-              Kitchen and bathroom renovations involve plumbing, electrical,
-              waterproofing, and structural work — all of which carry real
-              consequences when they go wrong. A poorly tiled shower or an
-              unlicensed electrical connection isn't just ugly, it's a
-              liability.
-            </RevealLine>
-            <RevealLine delay={0.22} className="mt-4 text-lg leading-8 text-white/75">
-              Getting a professional in from the start is cheaper, faster, and
-              safer than fixing a DIY job halfway through.
-            </RevealLine>
-          </div> */}
-
           <div className="grid gap-4 lg:h-[571px] lg:grid-rows-3">
             {riskCards.map((item, index) => (
               <RevealLine key={item.heading} delay={0.08 + index * 0.05}>

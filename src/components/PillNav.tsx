@@ -5,7 +5,7 @@ import { siteConfig } from '../lib/site'
 
 const navItems = [
   { href: '#services', label: 'Services' },
-  { href: '#work', label: 'Work' },
+  { href: '#work', label: 'Our Work' },
   { href: '#contact', label: 'Contact' },
 ]
 

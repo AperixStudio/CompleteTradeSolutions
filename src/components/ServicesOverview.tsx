@@ -92,7 +92,7 @@ function ServiceShowcaseCard({
   const reduced = useReducedMotion()
 
   return (
-    <section className="section-shell grid min-h-svh snap-start items-center gap-10 border-t border-(--color-line) py-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+    <section className="section-shell grid min-h-svh items-center gap-10 border-t border-(--color-line) py-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
       <div>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
           <RevealLine
@@ -190,7 +190,7 @@ function ServiceShowcaseCard({
 export default function ServicesOverview() {
   return (
     <>
-      <section id="services" className="section-shell flex min-h-svh snap-start flex-col justify-center py-20">
+      <section id="services" className="section-shell flex min-h-svh flex-col justify-center bg-(--color-background) py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
           <div className="max-w-4xl">
             <RevealLine

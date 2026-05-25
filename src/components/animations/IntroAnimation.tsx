@@ -160,6 +160,17 @@ export default function IntroAnimation({ onComplete }: Props) {
         >
           {/* ── Logo zoom wrapper ─────────────────────────────────────── */}
           <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              // Scale down on small screens so the logo fits without warping
+              transform: `scale(var(--intro-scale, 1))`,
+              transformOrigin: 'center center',
+            }}
+            className="[--intro-scale:0.55] sm:[--intro-scale:1]"
+          >
+          <div
             id="logo-zoom"
             style={{ position: 'relative', width: LOGO_SIZE, height: LOGO_SIZE }}
           >
@@ -210,6 +221,7 @@ export default function IntroAnimation({ onComplete }: Props) {
                 pointerEvents: 'none',
               }}
             />
+          </div>
           </div>
         </motion.div>
       )}

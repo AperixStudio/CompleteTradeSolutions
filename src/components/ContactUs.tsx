@@ -17,7 +17,7 @@ const contactItems = [
   {
     icon: Mail,
     label: 'Email',
-    value: siteConfig.email,  
+    value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
     fullWidth: true,
   },
@@ -27,7 +27,7 @@ export default function ContactUs() {
   return (
     <section
       id="contact"
-      className="flex min-h-svh snap-start items-center bg-[#e8e8e6] py-24"
+      className="flex min-h-svh items-center bg-[#2a2a2a] py-24 text-white"
     >
       <div className="section-shell w-full">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
@@ -35,37 +35,38 @@ export default function ContactUs() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)">
               Contact Us
             </p>
-            <h2 className="text-4xl font-black leading-tight text-(--color-primary) lg:text-5xl">
+            <h2 className="text-4xl font-black leading-tight text-white lg:text-5xl">
               Get a No Obligation, Free Quote
             </h2>
-            <p className="text-lg leading-8 text-(--color-muted)">
+            <p className="text-lg leading-8 text-white/70">
               Whether you're planning a full kitchen overhaul, a bathroom
               refresh, or just want to understand what's involved, we're happy
               to talk it through. Reach out and we'll get back to you quickly.
             </p>
+
             <div className="grid items-stretch gap-4 sm:grid-cols-2">
               {contactItems.map((item) => (
                 <div
                   key={item.label}
                   className={item.fullWidth ? 'h-full sm:col-span-2' : 'h-full'}
                 >
-                  <div className="flex h-full min-h-20 gap-4 rounded-xl border border-(--color-line) bg-white p-5">
-                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-(--color-secondary) text-(--color-primary)">
+                  <div className="flex h-full min-h-20 gap-4 rounded-xl border border-white/10 bg-white/10 p-5">
+                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-(--color-accent) text-white">
                       <item.icon size={20} />
                     </div>
                     <div>
-                      <p className="text-xs font-black uppercase tracking-[0.14em] text-(--color-muted)">
+                      <p className="text-xs font-black uppercase tracking-[0.14em] text-white/60">
                         {item.label}
                       </p>
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="mt-1 block font-bold text-(--color-primary) transition hover:text-(--color-accent)"
+                          className="mt-1 block font-bold text-white transition hover:text-(--color-accent)"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="mt-1 font-bold text-(--color-primary)">
+                        <p className="mt-1 font-bold text-white">
                           {item.value}
                         </p>
                       )}
@@ -83,7 +84,7 @@ export default function ContactUs() {
               action="/thank-you.html"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              className="rounded-3xl border border-(--color-line) bg-white p-6 shadow-[0_24px_80px_rgba(17,17,17,0.08)] sm:p-8"
+              className="rounded-3xl border border-white/10 bg-white p-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] sm:p-8"
             >
               <input type="hidden" name="form-name" value="contact" />
 

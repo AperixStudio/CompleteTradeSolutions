@@ -10,7 +10,7 @@ export const siteConfig = {
     'https://www.facebook.com/profile.php?id=61577631743905&mibextid=wwXIfr',
   heroHeadline: [
     'Renovation and Remodeling',
-    'Exterior Construction and Roof Restoration',
+    'Exterior Construction & Roof Restoration',
     'Painting Services',
     'Plumbing Services',
     'Electrical Services',

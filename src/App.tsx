@@ -108,12 +108,10 @@ function App() {
           <IntroAnimation key="intro" onComplete={handleIntroComplete} />
         )}
       </AnimatePresence>
-      {!introActive && (
-        <>
-          <HomePage />
-          <Footer />
-        </>
-      )}
+      <div className={introActive ? 'invisible pointer-events-none' : undefined}>
+        <HomePage />
+        <Footer />
+      </div>
     </>
   )
 }
