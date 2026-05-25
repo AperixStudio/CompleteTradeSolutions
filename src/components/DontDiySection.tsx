@@ -23,7 +23,7 @@ export default function DontDiySection() {
   return (
     <section
       id="dont-diy"
-      className="flex min-h-svh snap-start items-center bg-[#2a2a2a] py-24 text-white"
+      className="flex min-h-svh snap-start items-center bg-[#2a2a2a] pb-36 pt-24 text-white lg:pb-44"
     >
       <div className="section-shell">
         <div className="max-w-4xl">
@@ -38,7 +38,7 @@ export default function DontDiySection() {
             delay={0.08}
             className="mt-3 text-4xl font-black leading-tight lg:text-5xl"
           >
-            Some jobs look easy until they're not.
+            Some Jobs Look Easy Until They’re Not.
           </RevealLine>
         </div>
 
@@ -74,7 +74,7 @@ export default function DontDiySection() {
 
           <div className="grid gap-4 lg:h-[571px] lg:grid-rows-3">
             {riskCards.map((item, index) => (
-              <RevealLine key={item.heading} delay={0.12 + index * 0.1}>
+              <RevealLine key={item.heading} delay={0.08 + index * 0.05}>
                 <div className="flex h-full gap-5 rounded-xl border border-white/15 bg-white/8 p-5">
                   <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-(--color-accent) text-white">
                     <item.icon size={22} />

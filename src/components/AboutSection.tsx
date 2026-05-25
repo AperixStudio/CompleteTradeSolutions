@@ -38,7 +38,7 @@ export default function AboutSection() {
             delay={0.08}
             className="mt-3 text-4xl font-black leading-tight text-(--color-primary) lg:text-5xl"
           >
-            Trade experience you can actually rely on.
+            Trade Experience You Can Rely On.
           </RevealLine>
           <RevealLine
             delay={0.16}

@@ -5,7 +5,7 @@ export const siteConfig = {
   phoneHref: 'tel:+61421601954',
   email: 'info@completetrade.au',
   location: 'Melbourne, VIC, Australia, Victoria',
-  serviceArea: 'Melbourne metro and surrounding areas',
+  serviceArea: 'Metro Melbourne and Surrounds',
   facebookUrl:
     'https://www.facebook.com/profile.php?id=61577631743905&mibextid=wwXIfr',
   heroHeadline: [
