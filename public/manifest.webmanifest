@@ -1,0 +1,30 @@
+{
+  "name": "Complete Trade Solutions",
+  "short_name": "CTS",
+  "description": "Melbourne trade and renovation specialists for kitchens, bathrooms, roofing, painting, plumbing, electrical and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f2f0",
+  "theme_color": "#1c1c1c",
+  "lang": "en-AU",
+  "icons": [
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

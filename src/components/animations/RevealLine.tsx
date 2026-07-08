@@ -1,10 +1,14 @@
 /**
  * RevealLine — wraps children in an overflow:hidden mask.
  * The inner content slides up from y:100% when it enters the viewport.
- * This is the exact technique used on chkstepan.com.
  */
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode, ElementType } from 'react'
+import {
+  REVEAL_EASE,
+  REVEAL_LINE_TRANSITION,
+  REVEAL_VIEWPORT,
+} from '../../lib/motion'
 
 const MOTION_TAGS = {
   div: motion.div,
@@ -33,8 +37,6 @@ interface Props {
   /** Tag for the inner moving element. Defaults to 'span' for text tags and 'div' otherwise. */
   innerAs?: MotionTag
 }
-
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 function getDefaultInnerTag(tag: ElementType): MotionTag {
   if (
@@ -65,8 +67,8 @@ export default function RevealLine({
         className={innerClassName}
         initial={reduced ? { y: '0%' } : { y: '105%' }}
         whileInView={{ y: '0%' }}
-        viewport={{ once: false, amount: 0.12, margin: '0px 0px -12% 0px' }}
-        transition={{ duration: 0.72, delay, ease: EASE }}
+        viewport={REVEAL_VIEWPORT}
+        transition={{ ...REVEAL_LINE_TRANSITION, delay, ease: REVEAL_EASE }}
       >
         {children}
       </MotionInner>

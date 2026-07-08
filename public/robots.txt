@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Disallow: /thank-you.html
+Disallow: /netlify-forms.html
+
+Sitemap: https://www.completetrade.au/sitemap.xml

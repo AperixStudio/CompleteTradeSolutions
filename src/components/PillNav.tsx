@@ -1,12 +1,13 @@
 import { Menu, Phone, X } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.jpg'
 import { siteConfig } from '../lib/site'
 
 const navItems = [
-  { href: '#services', label: 'Services' },
-  { href: '#work', label: 'Our Work' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#contact', label: 'Contact' },
+  { href: '/#faq', label: 'FAQs' },
 ]
 
 function FacebookIcon({ size = 18 }: { size?: number }) {
@@ -32,7 +33,7 @@ export default function PillNav() {
         className="section-shell flex h-20 items-center justify-between"
         aria-label="Primary navigation"
       >
-        <a href="#top" className="flex min-w-0 items-center gap-3">
+        <Link to="/" className="flex min-w-0 items-center gap-3">
           <img
             src={logo}
             alt={`${siteConfig.name} logo`}
@@ -41,17 +42,17 @@ export default function PillNav() {
           <span className="hidden truncate text-sm font-black uppercase tracking-[0.16em] text-white sm:block sm:text-base">
             {siteConfig.name}
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
-              href={item.href}
+              to={item.href}
               className="rounded-full px-4 py-2 text-sm font-bold text-white/78 transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -100,14 +101,14 @@ export default function PillNav() {
           <div className="rounded-2xl border border-white/10 bg-black/20 p-3 shadow-xl shadow-black/25">
             <div className="grid gap-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
+                  to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="rounded-xl px-4 py-3 text-sm font-bold text-white/80 transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
 

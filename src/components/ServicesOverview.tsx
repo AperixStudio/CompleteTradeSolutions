@@ -5,10 +5,11 @@ import { motion, useReducedMotion } from 'framer-motion'
 import baHoriz from '../assets/BAHoriz.webp'
 import baVert from '../assets/BAVert.webp'
 // import logo from '../assets/logo.jpg'
-import { serviceTickerItems } from '../lib/site'
+import { getPublishedServices } from '../lib/services'
 import RevealImage from './animations/RevealImage'
 import RevealLine from './animations/RevealLine'
-import ServiceTicker from './ServiceTicker'
+import ServicesAccordion from './ServicesAccordion'
+import { REVEAL_VIEWPORT } from '../lib/motion'
 
 type ShowcaseCard = {
   number: string
@@ -108,8 +109,8 @@ function ServiceShowcaseCard({
             className="mt-2 block h-px flex-1 origin-left bg-(--color-line)"
             initial={reduced ? { scaleX: 1 } : { scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false, amount: 0.12, margin: '0px 0px -12% 0px' }}
-            transition={{ duration: 0.8, ease: EASE, delay: 0.12 }}
+            viewport={REVEAL_VIEWPORT}
+            transition={{ duration: 0.5, ease: EASE, delay: 0.06 }}
           />
 
           <div className="max-w-2xl space-y-1 text-[clamp(1.1rem,1.6vw,1.4rem)] font-medium leading-[1.35] text-black">
@@ -118,7 +119,7 @@ function ServiceShowcaseCard({
                 key={`${title}-${index}`}
                 as="div"
                 innerAs="span"
-                delay={0.06 * index}
+                delay={0.03 * index}
               >
                 {line}
               </RevealLine>
@@ -138,7 +139,7 @@ function ServiceShowcaseCard({
             <RevealLine
               as="h3"
               innerAs="span"
-              delay={0.08}
+              delay={0.04}
               className="mt-3 text-4xl font-black uppercase leading-none text-black sm:text-5xl"
             >
               {title}
@@ -163,21 +164,21 @@ function ServiceShowcaseCard({
           className="absolute left-0 top-0 block h-px w-full origin-left bg-black"
           initial={reduced ? { scaleX: 1 } : { scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
-          viewport={{ once: false, amount: 0.12, margin: '0px 0px -12% 0px' }}
-          transition={{ duration: 0.72, ease: EASE, delay: 0.18 }}
+          viewport={REVEAL_VIEWPORT}
+          transition={{ duration: 0.5, ease: EASE, delay: 0.06 }}
         />
 
         <RevealImage
           src={image}
           alt={alt}
-          delay={0.08}
+          delay={0.04}
           className="aspect-4/5 w-full rounded-[20px] object-cover"
         />
 
         <RevealLine
           as="div"
           innerAs="span"
-          delay={0.2}
+          delay={0.08}
           className="mt-4 text-sm font-black uppercase tracking-[0.18em] text-(--color-muted)"
         >
           {label}
@@ -188,36 +189,27 @@ function ServiceShowcaseCard({
 }
 
 export default function ServicesOverview() {
+  const featuredServices = getPublishedServices()
+
   return (
     <>
       <section id="services" className="section-shell flex min-h-svh flex-col justify-center bg-(--color-background) py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
           <div className="max-w-4xl">
-            <RevealLine
-              as="p"
-              innerAs="span"
-              className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)"
-            >
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-(--color-accent)">
               Services
-            </RevealLine>
-            <RevealLine
-              as="h2"
-              innerAs="span"
-              delay={0.06}
-              className="mt-1 text-4xl font-black leading-[0.95] text-black sm:text-5xl lg:text-6xl"
-            >
+            </p>
+            <h2 className="mt-1 text-4xl font-black leading-[0.95] text-black sm:text-5xl lg:text-6xl">
               Trade solutions for every stage of the job.
-            </RevealLine>
+            </h2>
             <div className="mt-8 max-w-3xl space-y-1 text-lg leading-8 text-(--color-muted)">
-              <RevealLine as="div" innerAs="span" delay={0.12}>
+              <p>
                 From renovations and fitouts to plumbing, electrical, painting,
-              </RevealLine>
-              <RevealLine as="div" innerAs="span" delay={0.18}>
                 roofing, and flooring, we help keep the work clear and moving.
-              </RevealLine>
-              <RevealLine as="div" innerAs="span" delay={0.24}>
-                Use the ticker below for a quick look at what we cover.
-              </RevealLine>
+              </p>
+              <p>
+                Tap a service below for a quick overview of what we cover.
+              </p>
             </div>
           </div>
 
@@ -234,25 +226,9 @@ export default function ServicesOverview() {
             />
           </div>
         </div>
-        {/*}
-        <div className="mt-10 flex flex-wrap gap-2">
-          {serviceTags.map((tag, index) => (
-            <RevealLine
-              key={tag}
-              as="div"
-              innerAs="span"
-              delay={0.05 * index}
-              className="inline-block"
-            >
-              <span className="inline-flex rounded-full border border-(--color-line) bg-(--color-background) px-4 py-2 text-sm font-bold text-black">
-                {tag}
-              </span>
-            </RevealLine>
-          ))}
-        </div>*/}
 
         <div className="mt-12">
-          <ServiceTicker items={serviceTickerItems} />
+          <ServicesAccordion services={featuredServices} />
         </div>
       </section>
 

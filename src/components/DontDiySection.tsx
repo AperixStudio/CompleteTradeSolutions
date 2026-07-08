@@ -35,7 +35,7 @@ export default function DontDiySection() {
           </RevealLine>
           <RevealLine
             as="h2"
-            delay={0.08}
+            delay={0.03}
             className="mt-3 text-4xl font-black leading-tight lg:text-5xl"
           >
             Some Jobs Look Easy Until They’re Not.
@@ -60,7 +60,7 @@ export default function DontDiySection() {
 
           <div className="grid gap-4 lg:h-[571px] lg:grid-rows-3">
             {riskCards.map((item, index) => (
-              <RevealLine key={item.heading} delay={0.08 + index * 0.05}>
+              <RevealLine key={item.heading} delay={0.03 + index * 0.03}>
                 <div className="flex h-full gap-5 rounded-xl border border-white/15 bg-white/8 p-5">
                   <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-(--color-accent) text-white">
                     <item.icon size={22} />

@@ -35,13 +35,13 @@ export default function AboutSection() {
           </RevealLine>
           <RevealLine
             as="h2"
-            delay={0.08}
+            delay={0.03}
             className="mt-3 text-4xl font-black leading-tight text-(--color-primary) lg:text-5xl"
           >
             Trade Experience You Can Rely On.
           </RevealLine>
           <RevealLine
-            delay={0.16}
+            delay={0.06}
             className="mt-6 text-lg leading-8 text-(--color-muted)"
           >
             Complete Trade Solutions was built on a simple idea: renovations
@@ -50,7 +50,7 @@ export default function AboutSection() {
             handover.
           </RevealLine>
           <RevealLine
-            delay={0.22}
+            delay={0.09}
             className="mt-4 text-lg leading-8 text-(--color-muted)"
           >
             We specialise in kitchen and bathroom renovations, bringing the
@@ -61,7 +61,7 @@ export default function AboutSection() {
 
         <div className="grid content-center gap-4">
           {aboutCards.map((item, index) => (
-            <RevealLine key={item.heading} delay={0.12 + index * 0.1}>
+            <RevealLine key={item.heading} delay={0.05 + index * 0.04}>
               <div className="flex gap-5 rounded-xl border border-(--color-line) bg-white p-5">
                 <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-(--color-accent) text-(--color-primary)">
                   <item.icon size={22} />

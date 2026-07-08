@@ -6,7 +6,7 @@ import TypeWriter from './animations/TypeWriter'
 
 export default function Hero() {
   return (
-    <section className="trade-grid relative h-svh pt-28">
+    <section id="top" className="trade-grid relative h-svh pt-28">
       {/* Full-bleed video background */}
       <div className="absolute inset-0 overflow-hidden">
         <video

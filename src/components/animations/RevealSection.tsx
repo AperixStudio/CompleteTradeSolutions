@@ -1,5 +1,10 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import {
+  REVEAL_EASE,
+  REVEAL_SECTION_TRANSITION,
+  REVEAL_SECTION_VIEWPORT,
+} from '../../lib/motion'
 
 interface Props {
   children: ReactNode
@@ -8,8 +13,6 @@ interface Props {
   distance?: number
   /** Delay in seconds before the reveal starts. Default 0. */
   delay?: number
-  /** How much of the element must be visible before triggering. Default 0.12. */
-  threshold?: number
 }
 
 export default function RevealSection({
@@ -17,20 +20,23 @@ export default function RevealSection({
   className,
   distance = 48,
   delay = 0,
-  threshold = 0.12,
 }: Props) {
   const prefersReduced = useReducedMotion()
 
   return (
     <motion.div
       className={className}
-      initial={prefersReduced ? false : { opacity: 0, y: distance, clipPath: `inset(${distance}px 0 0 0)` }}
+      initial={
+        prefersReduced
+          ? false
+          : { opacity: 0, y: distance, clipPath: `inset(${distance}px 0 0 0)` }
+      }
       whileInView={{ opacity: 1, y: 0, clipPath: 'inset(0px 0 0 0)' }}
-      viewport={{ once: true, amount: threshold }}
+      viewport={REVEAL_SECTION_VIEWPORT}
       transition={{
-        duration: 0.72,
+        ...REVEAL_SECTION_TRANSITION,
         delay,
-        ease: [0.22, 1, 0.36, 1],
+        ease: REVEAL_EASE,
       }}
     >
       {children}
